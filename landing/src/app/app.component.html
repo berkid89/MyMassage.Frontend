@@ -12,9 +12,15 @@
 <div class="container">
   <div class="row">
     <!-- ======= Logo Here ======= -->
-    <a class="logo wow fadeInDown" data-wow-iteration="1" href="index.html" title="masszazsom.hu">
-            <img class="img-responsive" src="/assets/img/logo.jpg" alt="masszazsom.hu" />
-       </a>
+    <div class="logo wow fadeInDown" data-wow-iteration="1">
+      <div class="col-md-6">
+        <img src="/assets/img/icons/flag.hu.png" alt="magyar" (click)="setLang('hu')" />
+      </div>
+      <div class="col-md-6">
+        <img src="/assets/img/icons/flag.en.png" alt="english" (click)="setLang('en')" />
+      </div>
+      <img class="img-responsive" src="/assets/img/logo.jpg" alt="masszazsom.hu" />
+    </div>
   </div>
   <!-- end row -->
 </div>
@@ -109,7 +115,7 @@
               <li><a href="#contact" title="Contact">contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a class="tips" href="#" title="Follow Us on Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="tips" href="https://www.facebook.com/Massz%C3%A1zster%C3%A1pia-%C3%A9letm%C3%B3d-369902773167039/" title="{{ 'Follow Us on Facebook' | translate}}"><i class="fa fa-facebook"></i></a></li>
             </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -131,12 +137,10 @@
           <img class="img-responsive wow fadeInUpBig" data-wow-offset="300" src="/assets/img/about.png" alt="About" />
           <img class="shadow img-responsive" src="/assets/img/seperator-shadow.png" alt="Seperator shadow" />
         </div>
-        <h2>About <span>BeautySpa</span></h2>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristique accumsan. Pellentesque
-          elit tortor, adipiscing vel velit in, ultriciesnulla. Donec in urna sem. Nulla facilisiestibulum ut aliquet agna.
-          Nulla nec faucibus est. In in augue placerat, ligula quis, elementum augue. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Integer gravida velit quis dolor tristique accumsan. Pellentesque lla nec faucibus est. In in
-          augue placerat, ligula quis, elementum augue.</p>
+        <h2><span>masszazsom.hu</span></h2>
+        <p class="text-center">
+          {{ introText }}
+        </p>
       </div>
     </div>
     <!-- end row -->

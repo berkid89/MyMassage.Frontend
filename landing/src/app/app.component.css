@@ -1,0 +1,18 @@
+div.logo {
+	background-color: rgba(255, 255, 255, 0.9);
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: 0;
+	position: absolute;
+	padding: 2em 1.5em 2em;
+	margin: 0 auto;
+	text-align: center;
+	z-index: 9;
+	width: 230px;
+	border: 1px solid #fff;
+	border-top: none;
+	-webkit-box-shadow: 0 5px 1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 5px 1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 5px 1px 0 rgba(0, 0, 0, 0.1);
+}
