@@ -19,7 +19,6 @@
       <div class="col-md-6">
         <img src="/assets/img/icons/flag.en.png" alt="english" (click)="setLang('en')" />
       </div>
-      <img class="img-responsive" src="/assets/img/logo.jpg" alt="masszazsom.hu" />
     </div>
   </div>
   <!-- end row -->
@@ -134,12 +133,12 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 text-center">
         <div class="aboutImg">
-          <img class="img-responsive wow fadeInUpBig" data-wow-offset="300" src="/assets/img/about.png" alt="About" />
+          <img class="img-responsive wow fadeInUpBig" data-wow-offset="300" src="/assets/img/logo.jpg" alt="masszazsom.hu" />
           <img class="shadow img-responsive" src="/assets/img/seperator-shadow.png" alt="Seperator shadow" />
         </div>
         <h2><span>masszazsom.hu</span></h2>
         <p class="text-center">
-          {{ introText }}
+          TODO: Bemutatkozó szöveg (2-3 mondat)!
         </p>
       </div>
     </div>
@@ -601,18 +600,18 @@
     <div class="row">
 
       <div class="col-md-6 col-sm-12 wow fadeInLeft" data-wow-offset="200" data-wow-delay="500ms">
-        <h4 class="subscribeHeading">Subscribe to our <span>newsletter</span> for special offers</h4>
+        <h4 class="subscribeHeading">{{ "Subscribe to our" | translate }} <span>{{ "newsletter" | translate }}</span> {{ "for special offers" | translate}}</h4>
       </div>
       <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-offset="200" data-wow-delay="800ms">
-        <form action="form/subscribe.php" id="subscribeForm" method="post">
+        <form id="subscribeForm">
           <div class="form-row">
             <div class="col-md-10 col-sm-10 col-xs-10">
-              <input type="email" id="emailSubscribe" name="emailSubscribe" class="form-control" placeholder="Enter Your Email Address Here..."
+              <input type="email" id="emailSubscribe" [(ngModel)]="emailAddressForSubscribe" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="{{ 'Enter Your Email Address Here...' | translate }}"
               />
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2">
               <input type="text" id="sub-security" name="sub-security" class="form-control hide" value="" />
-              <input type="submit" id="sub-submit" name="sub-submit" value="+" class="btn btn-primary" />
+              <input type="button" id="sub-submit" name="sub-submit" value="+" class="btn btn-primary" (click)="subscribe()" />
             </div>
           </div>
         </form>

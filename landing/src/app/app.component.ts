@@ -10,7 +10,7 @@ export class AppComponent {
   private translate: TranslateService;
 
   public year: number = new Date().getFullYear();
-  public introText: string;
+  public emailAddressForSubscribe: string;
 
   constructor(translate: TranslateService) {
     this.translate = translate;
@@ -20,5 +20,9 @@ export class AppComponent {
   setLang(lang: string) {
     this.translate.setDefaultLang(lang);
     this.translate.use(lang);
+  }
+
+  subscribe() {
+    console.log(this.emailAddressForSubscribe);
   }
 }
