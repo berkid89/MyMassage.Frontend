@@ -34,11 +34,9 @@
       <img src="/assets/img/slider/slide1.jpg" alt="slide" class="img-responsive">
       <div class="slide-caption">
         <div class="container wow fadeInDownBig">
-          <h1>Revitalise your senses!</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristique accumsan. Pellentesque
-            elit tortor, adipiscing vel velit in , ultricies fermentum nulla. Donec in urna semulla facilisi. Vestibulum
-            ut aliquet magna. Nulla nec faucibus est</p>
-          <a class="btn btn-primary read" href="#services">read More</a>
+          <h1>{{ "Slide1Header" | translate }}</h1>
+          <p>{{ "Slide1Content" | translate }}</p>
+          <a class="btn btn-primary read" href="#services">{{ "Read More" | translate }}</a>
         </div>
       </div>
     </div>
@@ -48,12 +46,9 @@
       <img src="/assets/img/slider/slide2.jpg" alt="slide" class="img-responsive">
       <div class="slide-caption">
         <div class="container">
-          <h1>Refresh your mind!</h1>
-          <p>In in augue placerat, viverra ligula quis, elementum augue. Donec molestie cursus tempus. Suspendisse malesuada,
-            non laoreet aliquet, est est vestibulum sapien, ut iaculis metus nunc eget urna. Donec tincidunt libero non porttitor
-            volutpat.
-          </p>
-          <a class="btn btn-primary read" href="#services">read More</a>
+          <h1>{{ "Slide2Header" | translate }}</h1>
+          <p>{{ "Slide2Content" | translate }}</p>
+          <a class="btn btn-primary read" href="#services">{{ "Read More" | translate }}</a>
         </div>
       </div>
     </div>
@@ -63,11 +58,9 @@
       <img src="/assets/img/slider/slide3.jpg" alt="slide" class="img-responsive">
       <div class="slide-caption">
         <div class="container">
-          <h1>Revitalise your senses!</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristique accumsan. Pellentesque
-            elit tortor, adipiscing vel velit in , ultricies fermentum nulla. Donec in urna semulla facilisi. Vestibulum
-            ut aliquet magna. Nulla nec faucibus est</p>
-          <a class="btn btn-primary read" href="#services">read More</a>
+          <h1>{{ "Slide3Header" | translate }}</h1>
+          <p>{{ "Slide3Content" | translate }}</p>
+          <a class="btn btn-primary read" href="#services">{{ "Read More" | translate }}</a>
         </div>
       </div>
     </div>
@@ -104,17 +97,17 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav">
-              <li><a href="#slides" title="Home">Home</a></li>
-              <li><a href="#about" title="About">About</a></li>
-              <li><a href="#services" title="Services">services</a></li>
+              <li><a href="#slides" title="{{ 'Home' | translate }}">{{ 'Home' | translate }}</a></li>
+              <li><a href="#about" title="{{ 'About' | translate }}">{{ 'About' | translate }}</a></li>
+              <li><a href="#services" title="{{ 'Services' | translate }}">{{ 'Services' | translate }}</a></li>
               <li><a href="#offer" title="Offer">Offer</a></li>
               <li><a href="#gallery" title="Gallery">Gallery</a></li>
-              <li><a href="#team" title="Team">Team</a></li>
               <li><a href="#quotes" title="Quotes">Quotes</a></li>
               <li><a href="#contact" title="Contact">contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a class="tips" href="https://www.facebook.com/Massz%C3%A1zster%C3%A1pia-%C3%A9letm%C3%B3d-369902773167039/" title="{{ 'Follow Us on Facebook' | translate}}"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="tips" href="https://www.facebook.com/Massz%C3%A1zster%C3%A1pia-%C3%A9letm%C3%B3d-369902773167039/"
+                  title="{{ 'Follow Us on Facebook' | translate}}"><i class="fa fa-facebook"></i></a></li>
             </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -153,11 +146,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12">
-        <h2>Our <span>Services</span></h2>
+        <h2>{{ 'Services' | translate }}</h2>
         <div id="serviceList" class="carousel slide clearfix" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators clearfix">
-            <li data-target="#serviceList" data-slide-to="0" class="item1 active wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms"><strong>Stone Massage</strong><span>1</span></li>
+            <li data-target="#serviceList" data-slide-to="0" class="item1 active wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms"><strong>Sportmasszázs</strong><span>1</span></li>
             <li data-target="#serviceList" data-slide-to="1" class="item2 wow fadeInDown" data-wow-offset="200" data-wow-delay="200ms"><strong>Aroma Therapy</strong><span>2</span></li>
             <li data-target="#serviceList" data-slide-to="2" class="item3 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms"><strong>Oil Massage</strong><span>3</span></li>
             <li data-target="#serviceList" data-slide-to="3" class="item4 wow fadeInDown" data-wow-offset="200" data-wow-delay="400ms"><strong>Facial</strong><span>4</span></li>
@@ -167,9 +160,9 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <div class="col-md-4 col-sm-5"><img class="img-responsive" src="/assets/img/gallery/small/01.jpg" alt="1"></div>
-              <div class="col-md-7 col-md-offset-1 col-sm-7">
-                <h3><span>Stone</span> Massage<strong class="price"><small>$</small>75</strong></h3>
+              <div class="col-md-12 col-sm-12">
+                <h3>Sportmasszázs (30 perc)<strong class="price">4 000 <small>huf</small></strong></h3>
+                <h3>Sportmasszázs (60 perc)<strong class="price">7 000 <small>huf</small></strong></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque
                   elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Vestibulum
                   ut aliquet magna. Nulla nec faucibus est. In in augue placerat elementum augue.</p>
@@ -263,101 +256,6 @@
     <!-- end row -->
   </div>
   <!-- end container -->
-
-  <div class="para1">
-    <div class="highlightBox">
-      <div class="boxBg">
-        <div class="page-block-big">
-          <h1 class="wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">We use only <strong>herbal products</strong></h1>
-          <h5 class="wow fadeInUp" data-wow-offset="200" data-wow-delay="200ms">from standard brands only</h5>
-        </div>
-      </div>
-    </div>
-    <!-- end highlightBox -->
-  </div>
-  <!-- end para1 -->
-
-  <div class="container packageList">
-    <div class="row">
-      <h4 class="text-center wow fadeInDown" data-wow-offset="300" data-wow-delay="100ms">Our Other <span>packages</span></h4>
-      <div class="col-md-6">
-
-        <div class="package wow fadeInLeft" data-wow-offset="250" data-wow-delay="200ms">
-          <h5>Fairness treatment</h5>
-          <ul class="list-default">
-            <li>Lorem ipsum dolor sit amet, consectetur</li>
-            <li>adipiscing eliteger gravida velit quis dolo</li>
-            <li>Pellentesque elit tortor</li>
-          </ul>
-          <strong class="price"><small>$</small>75</strong>
-        </div>
-        <!-- end package -->
-
-        <div class="package wow fadeInLeft" data-wow-offset="200" data-wow-delay="300m">
-          <h5>Steam Bath</h5>
-          <ul class="list-default">
-            <li>Lorem ipsum dolor sit amet, consectetur</li>
-            <li>adipiscing eliteger gravida velit quis dolo</li>
-            <li>Pellentesque elit tortor</li>
-          </ul>
-          <strong class="price"><small>$</small>50</strong>
-        </div>
-        <!-- end package -->
-
-        <div class="package no-border wow fadeInLeft" data-wow-offset="150" data-wow-delay="400m">
-          <h5>Lorem Ipsum treatment</h5>
-          <ul class="list-default">
-            <li>Lorem ipsum dolor sit amet, consectetur</li>
-            <li>adipiscing eliteger gravida velit quis dolo</li>
-            <li>Pellentesque elit tortor</li>
-          </ul>
-          <strong class="price"><small>$</small>99</strong>
-        </div>
-        <!-- end package -->
-
-      </div>
-      <!-- end col-md-6 -->
-      <div class="col-md-6">
-
-        <div class="package wow fadeInRight" data-wow-offset="250" data-wow-delay="500m">
-          <h5>Oil Massage</h5>
-          <ul class="list-default">
-            <li>Lorem ipsum dolor sit amet, consectetur</li>
-            <li>adipiscing eliteger gravida velit quis dolo</li>
-            <li>Pellentesque elit tortor</li>
-          </ul>
-          <strong class="price"><small>$</small>85</strong>
-        </div>
-        <!-- end package -->
-
-        <div class="package wow fadeInRight" data-wow-offset="200" data-wow-delay="600m">
-          <h5>Beauty Treatment</h5>
-          <ul class="list-default">
-            <li>Lorem ipsum dolor sit amet, consectetur</li>
-            <li>adipiscing eliteger gravida velit quis dolo</li>
-            <li>Pellentesque elit tortor</li>
-          </ul>
-          <strong class="price"><small>$</small>70</strong>
-        </div>
-        <!-- end package -->
-
-        <div class="package no-border wow fadeInRight" data-wow-offset="150" data-wow-delay="700m">
-          <h5>Fairness treatment</h5>
-          <ul class="list-default">
-            <li>Lorem ipsum dolor sit amet, consectetur</li>
-            <li>adipiscing eliteger gravida velit quis dolo</li>
-            <li>Pellentesque elit tortor</li>
-          </ul>
-          <strong class="price"><small>$</small>75</strong>
-        </div>
-        <!-- end package -->
-
-      </div>
-      <!-- end col-md-6 -->
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
 </section>
 <!-- END SERVICES -->
 
@@ -433,113 +331,6 @@
 </section>
 <!-- END  GALLERY -->
 
-<!-- START TEAM -->
-<section id="team" class="page-block">
-  <div class="container">
-    <div class="row">
-      <h2>Our <span>Experts</span></h2>
-      <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristique accumsan. Pellentesque
-        lla nec faucibus est. <br>In in augue placerat, ligula quis, elementum augue.</p>
-
-      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">
-        <div class="ih-item square effect10 top_to_bottom">
-          <aside>
-            <div class="img"><img class="img-responsive" src="/assets/img/team/01.jpg" alt="img"></div>
-            <div class="info">
-              <div class="info-back">
-                <h4>Jen Doe</h4>
-                <strong>Beauty Expert</strong>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan.</p>
-                <ul class="social list-inline">
-                  <li><a href="#" title="Follow Us on Facebook"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#" title="Follow Us on Twitter"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" title="Watch Our Videos"><i class="fa fa-youtube-play"></i></a></li>
-                  <li><a href="#" title="Watch Our gallery"><i class="fa fa-flickr"></i></a></li>
-                  <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-      <!-- end profile -->
-
-      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-offset="200" data-wow-delay="600ms">
-        <div class="ih-item square effect10 top_to_bottom">
-          <aside>
-            <div class="img"><img class="img-responsive" src="/assets/img/team/02.jpg" alt="img"></div>
-            <div class="info">
-              <div class="info-back">
-                <h4>Jenny Doe</h4>
-                <strong>Beauty Expert</strong>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan.</p>
-                <ul class="social list-inline">
-                  <li><a href="#" title="Follow Us on Facebook"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#" title="Follow Us on Twitter"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" title="Watch Our Videos"><i class="fa fa-youtube-play"></i></a></li>
-                  <li><a href="#" title="Watch Our gallery"><i class="fa fa-flickr"></i></a></li>
-                  <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-      <!-- end profile -->
-
-      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-offset="200" data-wow-delay="900ms">
-        <div class="ih-item square effect10 top_to_bottom">
-          <aside>
-            <div class="img"><img class="img-responsive" src="/assets/img/team/03.jpg" alt="img"></div>
-            <div class="info">
-              <div class="info-back">
-                <h4>Smith Doe</h4>
-                <strong>Beauty Expert</strong>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan.</p>
-                <ul class="social list-inline">
-                  <li><a href="#" title="Follow Us on Facebook"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#" title="Follow Us on Twitter"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" title="Watch Our Videos"><i class="fa fa-youtube-play"></i></a></li>
-                  <li><a href="#" title="Watch Our gallery"><i class="fa fa-flickr"></i></a></li>
-                  <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-      <!-- end profile -->
-
-      <div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-offset="200" data-wow-delay="1200ms">
-        <div class="ih-item square effect10 top_to_bottom">
-          <aside>
-            <div class="img"><img class="img-responsive" src="/assets/img/team/04.jpg" alt="img"></div>
-            <div class="info">
-              <div class="info-back">
-                <h4>Kyra Doe</h4>
-                <strong>Beauty Expert</strong>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan.</p>
-                <ul class="social list-inline">
-                  <li><a href="#" title="Follow Us on Facebook"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#" title="Follow Us on Twitter"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" title="Watch Our Videos"><i class="fa fa-youtube-play"></i></a></li>
-                  <li><a href="#" title="Watch Our gallery"><i class="fa fa-flickr"></i></a></li>
-                  <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-      <!-- end profile -->
-
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-</section>
-<!-- END  TEAM -->
-
 <!--START TESTIMONIALS -->
 <section id="quotes" class="para3">
   <div class="highlightBox">
@@ -606,8 +397,8 @@
         <form id="subscribeForm">
           <div class="form-row">
             <div class="col-md-10 col-sm-10 col-xs-10">
-              <input type="email" id="emailSubscribe" [(ngModel)]="emailAddressForSubscribe" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="{{ 'Enter Your Email Address Here...' | translate }}"
-              />
+              <input type="email" id="emailSubscribe" [(ngModel)]="emailAddressForSubscribe" [ngModelOptions]="{standalone: true}" class="form-control"
+                placeholder="{{ 'Enter Your Email Address Here...' | translate }}" />
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2">
               <input type="text" id="sub-security" name="sub-security" class="form-control hide" value="" />
@@ -637,15 +428,8 @@
             <div class="form-row col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="100ms">
               <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" />
             </div>
-            <div class="form-row col-md-6 wow fadeInRight" data-wow-offset="200" data-wow-delay="200ms">
-              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone" />
-            </div>
             <div class="form-row col-md-6 wow fadeInLeft" data-wow-offset="150" data-wow-delay="300ms">
               <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" />
-            </div>
-            <div class="form-row col-md-6 wow fadeInRight" data-wow-offset="150" data-wow-delay="400ms">
-              <input type="datetime" class="form-control" value="" id="datetimepicker" name="datetimepicker" placeholder="Preffered Date & Time"
-              />
             </div>
             <div class="form-row col-md-12 clearfix wow fadeInUp" data-wow-offset="100" data-wow-delay="500ms">
               <textarea cols="60" rows="3" id="comment" name="comment" class="form-control" placeholder="Write your comment here..."></textarea>
@@ -660,14 +444,11 @@
 
       <div class="col-md-3 col-md-offset-1 col-sm-4 contactInfo">
         <h5>GET IN TOUCH</h5>
-        <p class="no-border wow fadeInRight" data-wow-offset="200" data-wow-delay="100ms">
-          <i class="fa fa-clock-o"></i> Monday - Friday: <br>9:00am - 6:00pm
-        </p>
         <p class="wow fadeInRight" data-wow-offset="200" data-wow-delay="300ms">
           <i class="fa fa-map-marker"></i> 123 Main Street<br>Your City, State Country.
         </p>
         <p class="wow fadeInRight" data-wow-offset="200" data-wow-delay="500ms">
-          <i class="fa fa-phone"></i> Phone: 310.555.1213<br>Fax: 310.555.1213
+          <i class="fa fa-phone"></i> Phone: 310.555.1213
         </p>
         <p class="wow fadeInRight" data-wow-offset="200" data-wow-delay="700ms">
           <i class="fa fa-envelope-o"></i> <a href="mailto:youremailadd@domainname.com" title="Email Us" target="_blank">someemail@dominn.com</a>
