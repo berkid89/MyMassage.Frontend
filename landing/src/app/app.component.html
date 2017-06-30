@@ -12,7 +12,8 @@
 <div class="container">
   <div class="row">
     <!-- ======= Logo Here ======= -->
-    <div class="logo wow fadeInDown" data-wow-iteration="1">
+    
+    <div *ngIf="settings.showLangSelector" class="logo wow fadeInDown" data-wow-iteration="1">
       <div class="col-md-6">
         <img src="/assets/img/icons/flag.hu.png" alt="magyar" (click)="setLang('hu')" />
       </div>
@@ -260,20 +261,19 @@
 <!-- END SERVICES -->
 
 <!-- START SPECIAL OFFER -->
-<section id="offer" class="para2">
+<section *ngIf="specialOffer.hasSpecialOffer" id="offer" class="para2">
   <div class="boxBg page-block">
     <div class="container">
       <div class="row">
 
         <div class="col-md-2 col-sm-2 col-xs-12 wow rollIn" data-wow-offset="200" data-wow-delay="100ms">
-          <h1><span>25% <small>{{ "OFF" | translate }}</small></span></h1>
+          <h1 *ngIf="specialOffer.percent"><span>{{(specialOffer.percent)}}% <small>{{ "OFF" | translate }}</small></span></h1>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
           <h2>{{ "Special" | translate }} <span>{{ "Offer" | translate }}</span></h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque
-            elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi.</p>
+          <p>{{(specialOffer.text)}}</p>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-12 text-center wow fadeInLeft" data-wow-offset="200" data-wow-delay="300ms"><a class="btn btn-primary" href="#" title="">Get Now</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-12 text-center wow fadeInLeft" data-wow-offset="200" data-wow-delay="300ms"><a class="btn btn-primary" href="#" title="">{{ "Get Now" | translate }}</a></div>
 
       </div>
       <!-- end row -->
