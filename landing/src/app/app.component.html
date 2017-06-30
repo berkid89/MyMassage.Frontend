@@ -267,11 +267,11 @@
       <div class="row">
 
         <div class="col-md-2 col-sm-2 col-xs-12 wow rollIn" data-wow-offset="200" data-wow-delay="100ms">
-          <h1 *ngIf="specialOffer.percent"><span>{{(specialOffer.percent)}}% <small>{{ "OFF" | translate }}</small></span></h1>
+          <h1 *ngIf="specialOffer.percent"><span>{{specialOffer.percent}}% <small>{{ "OFF" | translate }}</small></span></h1>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
           <h2>{{ "Special" | translate }} <span>{{ "Offer" | translate }}</span></h2>
-          <p>{{(specialOffer.text)}}</p>
+          <p>{{specialOffer.text}}</p>
         </div>
         <div class="col-md-2 col-sm-2 col-xs-12 text-center wow fadeInLeft" data-wow-offset="200" data-wow-delay="300ms"><a class="btn btn-primary" href="#" title="">{{ "Get Now" | translate }}</a></div>
 
@@ -338,7 +338,7 @@
       <div class="page-block-big">
         <i class="fa fa-quote-left wow bounceIn" data-wow-offset="200" data-wow-delay="100ms"></i><i class="fa fa-quote-right wow bounceIn"
           data-wow-offset="200" data-wow-delay="100ms"></i>
-        <h1 class="wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">What our <strong>clients say</strong></h1>
+        <h1 class="wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">{{ "Quotes" | translate }}</h1>
         <div id="testimonial" class="carousel slide container" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators wow fadeInUp" data-wow-offset="200" data-wow-delay="700ms">
@@ -350,27 +350,21 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner text-center wow fadeInUp" data-wow-offset="200" data-wow-delay="500ms">
             <div class="item active">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristique accumsan.
-                Pellentesque elit tortor, adipiscing vel velit inermentum nulla. Donec in urna semulla facilisi. Vestibulum
-                ut aliquet magna. Nulla nec faucibus est</p>
-              <h5>- Jenny Doe, Model</h5>
+              <p>TODO: ide egy idézet 1/3</p>
+              <h5>- Kitől</h5>
             </div>
             <!-- end item -->
 
             <div class="item">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristique accumsan.
-                Pellentesque elit tortor, adipiscing vel velit lla. Donec in urna semulla facilisi. Vestibulum ut aliquet
-                magna
+              <p>TODO: ide egy idézet 2/3
               </p>
-              <h5>- Jenny Doe, Model</h5>
+              <h5>- Kitől</h5>
             </div>
             <!-- end item -->
 
             <div class="item">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristique accumsan.Pellentesque
-                elit tortor, adipiscing vel velit in ialla. Donec in urna semulla facilisi. Vestibulum ut aliquet magna.
-                Nulla nec faucibus est</p>
-              <h5>- Jenny Doe, Model</h5>
+              <p>TODO: ide egy idézet 3/3</p>
+              <h5>- Kitől</h5>
             </div>
             <!-- end item -->
           </div>
@@ -419,7 +413,7 @@
 <section id="contact" class="page-block">
   <div class="container">
     <div class="row">
-      <h2>Contact <span>Us</span></h2>
+      <h2>{{ "Contact" | translate }}</h2>
 
       <div class="col-md-8 col-sm-8">
         <p>Fill up form below for appointment. All fields are required.</p>
@@ -436,22 +430,22 @@
             </div>
             <div class="col-md-12 wow fadeInUp" data-wow-offset="50" data-wow-delay="700ms">
               <input type="text" id="security" name="security" class="form-control hide" value="" />
-              <input type="submit" value="Submit" class="btn btn-default" id="submit" name="submit" />
+              <input type="submit" value="{{ 'Submit' | translate }}" class="btn btn-default" id="submit" name="submit" />
             </div>
           </div>
         </form>
       </div>
 
       <div class="col-md-3 col-md-offset-1 col-sm-4 contactInfo">
-        <h5>GET IN TOUCH</h5>
+        <h5>{{ "GET IN TOUCH" | translate }}</h5>
         <p class="wow fadeInRight" data-wow-offset="200" data-wow-delay="300ms">
-          <i class="fa fa-map-marker"></i> 123 Main Street<br>Your City, State Country.
+          <i class="fa fa-map-marker"></i> {{getInTouch.address}}<br>{{getInTouch.city}}, {{getInTouch.country}}.
         </p>
         <p class="wow fadeInRight" data-wow-offset="200" data-wow-delay="500ms">
-          <i class="fa fa-phone"></i> Phone: 310.555.1213
+          <i class="fa fa-phone"></i> {{ "Phone" | translate }}: {{getInTouch.phoneNumber}}
         </p>
         <p class="wow fadeInRight" data-wow-offset="200" data-wow-delay="700ms">
-          <i class="fa fa-envelope-o"></i> <a href="mailto:youremailadd@domainname.com" title="Email Us" target="_blank">someemail@dominn.com</a>
+          <i class="fa fa-envelope-o"></i> <a href="mailto:{{getInTouch.email}}" title="Email Us" target="_blank">{{getInTouch.email}}</a>
         </p>
       </div>
 
