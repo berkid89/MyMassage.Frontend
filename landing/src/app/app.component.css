@@ -20,3 +20,7 @@ div.logo {
 div.logo img {
 	cursor: pointer;
 }
+
+.thx-message{
+	color: #8bca39;
+}

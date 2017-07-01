@@ -25,5 +25,13 @@
     "Get Now": "Kérem",
     "Phone": "Telefon",
     "GET IN TOUCH": "Lépjen kapcsolatba velünk",
-    "Submit": "Elküld"
+    "Submit": "Elküld",
+    "Fill up form below for appointment.": "Töltse ki az alábbi űrlapot időpont egyeztetéshez.",
+    "All fields are required.": "Minden mező kitöltése kötelező.",
+    "Your Name": "Az ön neve",
+    "Your Email": "Email címe",
+    "Message": "Üzenet",
+    "AcceptOffer": "Kedves masszazsom.hu!\nSzeretném igénybe venni az aktuális kedvezményt, kérem vegye fel velem a kapcsolatot!",
+    "Invalid email format": "Nem megfelelő email cím formátum",
+    "Thank You! We'll get in touch with you soon.": "Köszönjük! Hamarosan felvesszük önnel a kapcsolatot."
 }

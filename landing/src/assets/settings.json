@@ -1,3 +1,6 @@
 {
-    "showLangSelector": false
+    "showLangSelector": false,
+    "endpoints": {
+        "api": ""
+    }
 }

@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SpecialOffer } from './models/special-offer';
 import { Http } from '@angular/http';
 import { GetInTouch } from './models/get-in-touch';
+import { Contact } from './models/contact';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent {
   public emailAddressForSubscribe: string;
   public specialOffer: SpecialOffer;
   public getInTouch: GetInTouch;
+  public contact: Contact = new Contact();
 
   constructor(private translate: TranslateService, private http: Http) {
     this.setLang('hu');
@@ -29,7 +31,16 @@ export class AppComponent {
   }
 
   subscribe() {
-    console.log(this.emailAddressForSubscribe);
+  }
+
+  wantSpecialOffer() {
+    this.translate.get("AcceptOffer").subscribe(res => this.contact.message = res);
+  }
+
+  onContactSubmit() {
+    debugger;
+    this.contact = new Contact();
+    this.contact.submitted = true;
   }
 
   initSpecialOffer() {

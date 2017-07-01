@@ -12,8 +12,8 @@
 <div class="container">
   <div class="row">
     <!-- ======= Logo Here ======= -->
-    
-    <div *ngIf="settings.showLangSelector" class="logo wow fadeInDown" data-wow-iteration="1">
+
+    <div *ngIf="settings && settings.showLangSelector" class="logo wow fadeInDown" data-wow-iteration="1">
       <div class="col-md-6">
         <img src="/assets/img/icons/flag.hu.png" alt="magyar" (click)="setLang('hu')" />
       </div>
@@ -102,7 +102,6 @@
               <li><a href="#about" title="{{ 'About' | translate }}">{{ 'About' | translate }}</a></li>
               <li><a href="#services" title="{{ 'Services' | translate }}">{{ 'Services' | translate }}</a></li>
               <li><a href="#offer" title="{{ 'Special offer' | translate }}">{{ "Special offer" | translate }}</a></li>
-              <li><a href="#gallery" title="{{ 'Gallery' | translate }}">{{ "Gallery" | translate }}</a></li>
               <li><a href="#quotes" title="{{ 'Quotes' | translate }}">{{ "Quotes" | translate }}</a></li>
               <li><a href="#contact" title="{{ 'Contact' | translate }}">{{ "Contact" | translate }}</a></li>
             </ul>
@@ -273,7 +272,7 @@
           <h2>{{ "Special" | translate }} <span>{{ "Offer" | translate }}</span></h2>
           <p>{{specialOffer.text}}</p>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-12 text-center wow fadeInLeft" data-wow-offset="200" data-wow-delay="300ms"><a class="btn btn-primary" href="#" title="">{{ "Get Now" | translate }}</a></div>
+        <div class="col-md-2 col-sm-2 col-xs-12 text-center wow fadeInLeft" data-wow-offset="200" data-wow-delay="300ms"><a (click)="wantSpecialOffer()" class="btn btn-primary" href="#contact" title="">{{ "Get Now" | translate }}</a></div>
 
       </div>
       <!-- end row -->
@@ -282,54 +281,6 @@
   </div>
 </section>
 <!-- END  SPECIAL OFFER -->
-
-<!-- START GALLERY -->
-<section id="gallery" class="page-block">
-  <div class="container">
-    <div class="row">
-      <h2>Our <span>Gallery</span></h2>
-      <p class="text-center">In in augue placerat, ligula quis, elementum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-        gravida velit quis dolor tristique accumsan. <br>Pellentesque lla nec faucibus est. In in augue placerat, ligula
-        quis, elementum augue.</p>
-      <ul class="galleryImg clearfix">
-        <li class="wow fadeInLeft" data-wow-offset="200" data-wow-delay="100ms">
-          <a href="/assets/img/gallery/large/01.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/01.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
-          <a href="/assets/img/gallery/large/02.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/02.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="200" data-wow-delay="300ms">
-          <a href="/assets/img/gallery/large/03.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/03.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="200" data-wow-delay="400ms">
-          <a href="/assets/img/gallery/large/04.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/04.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="200" data-wow-delay="500ms">
-          <a href="/assets/img/gallery/large/05.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/05.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="100" data-wow-delay="600ms">
-          <a href="/assets/img/gallery/large/06.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/06.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="100" data-wow-delay="700ms">
-          <a href="/assets/img/gallery/large/07.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/07.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="100" data-wow-delay="800ms">
-          <a href="/assets/img/gallery/large/08.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/08.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="100" data-wow-delay="900ms">
-          <a href="/assets/img/gallery/large/01.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/01.jpg" alt="Gallery"></a>
-        </li>
-        <li class="wow fadeInLeft" data-wow-offset="100" data-wow-delay="1000ms">
-          <a href="/assets/img/gallery/large/02.jpg" title="Your caption" rel="prettyPhoto[gallery1]"><img class="img-reponsive" src="/assets/img/gallery/small/02.jpg" alt="Gallery"></a>
-        </li>
-        <!-- ... -->
-      </ul>
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-</section>
-<!-- END  GALLERY -->
 
 <!--START TESTIMONIALS -->
 <section id="quotes" class="para3">
@@ -416,21 +367,29 @@
       <h2>{{ "Contact" | translate }}</h2>
 
       <div class="col-md-8 col-sm-8">
-        <p>Fill up form below for appointment. All fields are required.</p>
-        <form id="contact_form" method="post" action="form/contact.php">
+        <p>{{ "Fill up form below for appointment." | translate }} {{ "All fields are required." | translate }}</p>
+        <form #contactForm="ngForm" (ngSubmit)="onContactSubmit()">
           <div class="field-wrapper">
             <div class="form-row col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="100ms">
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" />
+              <input type="text" [(ngModel)]="contact.name" #name="ngModel" class="form-control" required id="name" name="name" placeholder="{{ 'Your Name' | translate }}"
+                ng />
             </div>
             <div class="form-row col-md-6 wow fadeInLeft" data-wow-offset="150" data-wow-delay="300ms">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" />
+              <input type="email" [(ngModel)]="contact.email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required id="email" name="email" placeholder="{{ 'Your Email' | translate }}"
+              />
+              <div *ngIf="email.errors && contact.email && (email.dirty || email.touched)" class="alert alert-danger">
+                <div [hidden]="!email.errors.pattern">
+                  {{ "Invalid email format" | translate }}
+                </div>
+              </div>
             </div>
             <div class="form-row col-md-12 clearfix wow fadeInUp" data-wow-offset="100" data-wow-delay="500ms">
-              <textarea cols="60" rows="3" id="comment" name="comment" class="form-control" placeholder="Write your comment here..."></textarea>
+              <textarea cols="60" [(ngModel)]="contact.message" #message="ngModel" rows="3" id="message" required name="message" class="form-control"
+                placeholder="{{ 'Message' | translate }}"></textarea>
             </div>
             <div class="col-md-12 wow fadeInUp" data-wow-offset="50" data-wow-delay="700ms">
-              <input type="text" id="security" name="security" class="form-control hide" value="" />
-              <input type="submit" value="{{ 'Submit' | translate }}" class="btn btn-default" id="submit" name="submit" />
+              <button type="submit" [hidden]="contact.submitted" class="btn btn-default" [disabled]="!contactForm.form.valid">{{ 'Submit' | translate }}</button>
+              <span class="thx-message" [hidden]="!contact.submitted"><strong>{{ "Thank You! We'll get in touch with you soon." | translate }}</strong></span>
             </div>
           </div>
         </form>
