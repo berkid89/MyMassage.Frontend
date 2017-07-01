@@ -1,6 +1,11 @@
 {
     "showLangSelector": false,
     "endpoints": {
-        "api": ""
+        "api": "/api/v1",
+        "subscribe": "/subscription/subscribe",
+        "services": "/services",
+        "offer": "/offer/special",
+        "contact": "/contact",
+        "getintouch": "/getintouch"
     }
 }

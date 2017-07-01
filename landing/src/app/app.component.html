@@ -109,6 +109,7 @@
               <li><a class="tips" href="https://www.facebook.com/Massz%C3%A1zster%C3%A1pia-%C3%A9letm%C3%B3d-369902773167039/"
                   title="{{ 'Follow Us on Facebook' | translate}}"><i class="fa fa-facebook"></i></a></li>
             </ul>
+            <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
           </div>
           <!-- /.navbar-collapse -->
         </div>
@@ -150,104 +151,22 @@
         <div id="serviceList" class="carousel slide clearfix" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators clearfix">
-            <li data-target="#serviceList" data-slide-to="0" class="item1 active wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms"><strong>Sportmasszázs</strong><span>1</span></li>
-            <li data-target="#serviceList" data-slide-to="1" class="item2 wow fadeInDown" data-wow-offset="200" data-wow-delay="200ms"><strong>Aroma Therapy</strong><span>2</span></li>
-            <li data-target="#serviceList" data-slide-to="2" class="item3 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms"><strong>Oil Massage</strong><span>3</span></li>
-            <li data-target="#serviceList" data-slide-to="3" class="item4 wow fadeInDown" data-wow-offset="200" data-wow-delay="400ms"><strong>Facial</strong><span>4</span></li>
-            <li data-target="#serviceList" data-slide-to="4" class="item5 wow fadeInDown" data-wow-offset="200" data-wow-delay="500ms"><strong>Skin Therapy</strong><span>5</span></li>
+            <li data-target="#serviceList" *ngFor="let svc of services; let i = index" [attr.data-index]="i" [attr.data-slide-to]="i" class="item{{i}} {{i == 0 ? 'active' : ''}} wow fadeInDown" data-wow-offset="200"
+              data-wow-delay="100ms"><strong>{{svc.name}}</strong><span>{{i+1}}</span></li>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
+            <div *ngFor="let svc of services; let i = index" [attr.data-index]="i" class="item {{i == 0 ? 'active' : ''}}">
               <div class="col-md-12 col-sm-12">
-                <h3>Sportmasszázs (30 perc)<strong class="price">4 000 <small>huf</small></strong></h3>
-                <h3>Sportmasszázs (60 perc)<strong class="price">7 000 <small>huf</small></strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque
-                  elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Vestibulum
-                  ut aliquet magna. Nulla nec faucibus est. In in augue placerat elementum augue.</p>
+                <h3 *ngFor="let item of svc.items">{{svc.name + ' (' + item.minute +' perc)'}}<strong class="price">{{item.price}} <small>huf</small></strong></h3>
+                <p>{{svc.description}}</p>
                 <ul class="list-default">
-                  <li>Pellentesque elit tortor, adipiscing vel velit in, ultricies </li>
-                  <li>Donec in urna sem. Nulla facilisi. Vestibulum ut aliquet magna</li>
-                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
+                  <li *ngFor="let text of svc.textList">{{text}}</li>
                 </ul>
               </div>
             </div>
             <!-- end item -->
-
-            <div class="item">
-              <div class="col-md-4 col-sm-5"><img class="img-responsive" src="/assets/img/gallery/small/02.jpg" alt="1"></div>
-              <div class="col-md-7 col-md-offset-1 col-sm-7">
-                <h3><span>Aroma</span> Therapy<strong class="price"><small>$</small>75</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque
-                  elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Vestibulum
-                  ut aliquet magna. Nulla nec faucibus est. In in augue placerat elementum augue.</p>
-                <ul class="list-default">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                  <li>Pellentesque elit tortor, adipiscing vel velit in, ultricies </li>
-                  <li>Donec in urna sem. Nulla facilisi. Vestibulum ut aliquet magna</li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                </ul>
-              </div>
-            </div>
-            <!-- end item -->
-
-            <div class="item">
-              <div class="col-md-4 col-sm-5"><img class="img-responsive" src="/assets/img/gallery/small/03.jpg" alt="1"></div>
-              <div class="col-md-7 col-md-offset-1 col-sm-7">
-                <h3><span>Oil</span> Massage<strong class="price"><small>$</small>75</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque
-                  elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Vestibulum
-                  ut aliquet magna. Nulla nec faucibus est. In in augue placerat elementum augue.</p>
-                <ul class="list-default">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                  <li>Pellentesque elit tortor, adipiscing vel velit in, ultricies </li>
-                </ul>
-              </div>
-            </div>
-            <!-- end item -->
-
-            <div class="item">
-              <div class="col-md-4 col-sm-5"><img class="img-responsive" src="/assets/img/gallery/small/04.jpg" alt="1"></div>
-              <div class="col-md-7 col-md-offset-1 col-sm-7">
-                <h3><span>Facial</span><strong class="price"><small>$</small>75</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque
-                  elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Vestibulum
-                  ut aliquet magna. Nulla nec faucibus est. In in augue placerat elementum augue.</p>
-                <ul class="list-default">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                  <li>Pellentesque elit tortor, adipiscing vel velit in, ultricies </li>
-                  <li>Donec in urna sem. Nulla facilisi. Vestibulum ut aliquet magna</li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                </ul>
-              </div>
-            </div>
-            <!-- end item -->
-
-            <div class="item">
-              <div class="col-md-4 col-sm-5"><img class="img-responsive" src="/assets/img/gallery/small/05.jpg" alt="1"></div>
-              <div class="col-md-7 col-md-offset-1 col-sm-7">
-                <h3><span>Skin</span> Treatment<strong class="price"><small>$</small>75</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan. Pellentesque
-                  elit tortor, adipiscing vel velit in, ultricies fermentum nulla. Donec in urna sem. Nulla facilisi. Vestibulum
-                  ut aliquet magna. Nulla nec faucibus est. In in augue placerat elementum augue.</p>
-                <ul class="list-default">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                  <li>Integer gravida velit quis dolor tristiqumsan. </li>
-                  <li>Pellentesque elit tortor, adipiscing vel velit in, ultricies </li>
-                  <li>Donec in urna sem. Nulla facilisi. Vestibulum ut aliquet magna</li>
-                </ul>
-              </div>
-            </div>
-            <!-- end item -->
-
           </div>
           <!-- end carousel-inner -->
         </div>
@@ -339,14 +258,18 @@
         <h4 class="subscribeHeading">{{ "Subscribe to our" | translate }} <span>{{ "newsletter" | translate }}</span> {{ "for special offers" | translate}}</h4>
       </div>
       <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-offset="200" data-wow-delay="800ms">
-        <form id="subscribeForm">
+        <form #subscribeForm="ngForm" (ngSubmit)="onContactSubmit()">
           <div class="form-row">
             <div class="col-md-10 col-sm-10 col-xs-10">
-              <input type="email" id="emailSubscribe" [(ngModel)]="emailAddressForSubscribe" [ngModelOptions]="{standalone: true}" class="form-control"
-                placeholder="{{ 'Enter Your Email Address Here...' | translate }}" />
+              <input type="email" id="semail" [(ngModel)]="subscription.email" #semail="ngModel" name="semail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                class="form-control" placeholder="{{ 'Enter Your Email Address Here...' | translate }}" required />
+              <div *ngIf="semail.errors && subscription.email && (semail.dirty || semail.touched)" class="alert alert-danger">
+                <div [hidden]="!semail.errors.pattern">
+                  {{ "Invalid email format" | translate }}
+                </div>
+              </div>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2">
-              <input type="text" id="sub-security" name="sub-security" class="form-control hide" value="" />
               <input type="button" id="sub-submit" name="sub-submit" value="+" class="btn btn-primary" (click)="subscribe()" />
             </div>
           </div>
@@ -375,8 +298,8 @@
                 ng />
             </div>
             <div class="form-row col-md-6 wow fadeInLeft" data-wow-offset="150" data-wow-delay="300ms">
-              <input type="email" [(ngModel)]="contact.email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required id="email" name="email" placeholder="{{ 'Your Email' | translate }}"
-              />
+              <input type="email" [(ngModel)]="contact.email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control"
+                required id="email" name="email" placeholder="{{ 'Your Email' | translate }}" />
               <div *ngIf="email.errors && contact.email && (email.dirty || email.touched)" class="alert alert-danger">
                 <div [hidden]="!email.errors.pattern">
                   {{ "Invalid email format" | translate }}
@@ -389,7 +312,6 @@
             </div>
             <div class="col-md-12 wow fadeInUp" data-wow-offset="50" data-wow-delay="700ms">
               <button type="submit" [hidden]="contact.submitted" class="btn btn-default" [disabled]="!contactForm.form.valid">{{ 'Submit' | translate }}</button>
-              <span class="thx-message" [hidden]="!contact.submitted"><strong>{{ "Thank You! We'll get in touch with you soon." | translate }}</strong></span>
             </div>
           </div>
         </form>

@@ -4,3 +4,7 @@ export class Contact {
     public message: string;
     public submitted: boolean = false;
 }
+
+export class Subscription {
+    public email: string;
+}

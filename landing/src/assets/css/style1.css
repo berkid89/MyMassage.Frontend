@@ -1267,3 +1267,8 @@ html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fie
 	border-style: solid solid none solid !important;
 }
 }
+
+.toaster-msg > div {
+	color: white !important;
+	font-weight: bold;
+}
