@@ -3,9 +3,9 @@
     "endpoints": {
         "api": "/api/v1",
         "subscribe": "/subscription/subscribe",
-        "services": "/services",
+        "services": "/services/list",
         "offer": "/offer/special",
-        "contact": "/contact",
-        "getintouch": "/getintouch"
+        "contact": "/contact/send",
+        "getintouch": "/getintouch/data"
     }
 }
