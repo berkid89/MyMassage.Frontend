@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SpecialOffer } from './models/special-offer';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { GetInTouch } from './models/get-in-touch';
 import { Contact, Subscription } from './models/contact';
 import { ToasterService, ToasterConfig } from 'angular2-toaster';
@@ -26,8 +26,6 @@ export class AppComponent {
     this.setLang('hu');
     this.initSettings();
     this.initServices();
-    this.initSpecialOffer();
-    this.initGetInTouch();
   }
 
   setLang(lang: string) {
@@ -37,8 +35,10 @@ export class AppComponent {
 
   subscribe() {
     if (this.subscription.email) {
-      this.subscription = new Subscription();
-      this.translate.get("Thank You! We'll get in touch with you soon.").subscribe(res => this.toasterService.pop('success', '', res));
+      this.http.put(this.settings.endpoints.api + this.settings.endpoints.subscribe, this.subscription).subscribe(res => {
+        this.subscription = new Subscription();
+        this.translate.get("Thank You! We'll get in touch with you soon.").subscribe(res => this.toasterService.pop('success', '', res));
+      });
     }
   }
 
@@ -47,34 +47,32 @@ export class AppComponent {
   }
 
   onContactSubmit() {
-    this.contact = new Contact();
-    this.contact.submitted = true;
-    this.translate.get("Thank You! We'll get in touch with you soon.").subscribe(res => this.toasterService.pop('success', '', res));
+    this.http.post(this.settings.endpoints.api + this.settings.endpoints.contact, this.contact).subscribe(res => {
+      this.contact = new Contact();
+      this.contact.submitted = true;
+      this.translate.get("Thank You! We'll get in touch with you soon.").subscribe(res => this.toasterService.pop('success', '', res));
+    });
   }
 
-  initSpecialOffer() {
-    let so = new SpecialOffer();
-    so.hasSpecialOffer = true;
-    so.percent = 50;
-    so.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida velit quis dolor tristiqumsan."
-
-    this.specialOffer = so;
+  initSpecialOffer(settings: any) {
+    this.http.get(settings.endpoints.api + settings.endpoints.offer).subscribe(res => {
+      this.specialOffer = res.json().data;
+    });
   }
 
   initSettings() {
     this.http.get('/assets/settings.json')
-      .subscribe(res => this.settings = res.json());
+      .subscribe(res => {
+        this.settings = res.json();
+        this.initSpecialOffer(this.settings);
+        this.initGetInTouch(this.settings);
+      });
   }
 
-  initGetInTouch() {
-    let git = new GetInTouch();
-    git.address = "Károly krt. 3/a. Fél emelet 13. (33-as kapucsengő)";
-    git.city = "Budapest 1075";
-    git.country = "Magyarország";
-    git.phoneNumber = "+36/30-916-1147";
-    git.email = "masszazsterapia.eletmod@gmail.com";
-
-    this.getInTouch = git;
+  initGetInTouch(settings: any) {
+    this.http.get(settings.endpoints.api + settings.endpoints.getintouch).subscribe(res => {
+      this.getInTouch = res.json().data;
+    });
   }
 
   initServices() {

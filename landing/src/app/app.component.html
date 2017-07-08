@@ -101,7 +101,7 @@
               <li><a href="#slides" title="{{ 'Home' | translate }}">{{ 'Home' | translate }}</a></li>
               <li><a href="#about" title="{{ 'About' | translate }}">{{ 'About' | translate }}</a></li>
               <li><a href="#services" title="{{ 'Services' | translate }}">{{ 'Services' | translate }}</a></li>
-              <li><a href="#offer" title="{{ 'Special offer' | translate }}">{{ "Special offer" | translate }}</a></li>
+              <li *ngIf="specialOffer && specialOffer.hasSpecialOffer"><a href="#offer" title="{{ 'Special offer' | translate }}">{{ "Special offer" | translate }}</a></li>
               <li><a href="#quotes" title="{{ 'Quotes' | translate }}">{{ "Quotes" | translate }}</a></li>
               <li><a href="#contact" title="{{ 'Contact' | translate }}">{{ "Contact" | translate }}</a></li>
             </ul>
@@ -179,7 +179,7 @@
 <!-- END SERVICES -->
 
 <!-- START SPECIAL OFFER -->
-<section *ngIf="specialOffer.hasSpecialOffer" id="offer" class="para2">
+<section *ngIf="specialOffer && specialOffer.hasSpecialOffer" id="offer" class="para2">
   <div class="boxBg page-block">
     <div class="container">
       <div class="row">
@@ -317,7 +317,7 @@
         </form>
       </div>
 
-      <div class="col-md-3 col-md-offset-1 col-sm-4 contactInfo">
+      <div *ngIf="getInTouch" class="col-md-3 col-md-offset-1 col-sm-4 contactInfo">
         <h5>{{ "GET IN TOUCH" | translate }}</h5>
         <p class="wow fadeInRight" data-wow-offset="200" data-wow-delay="300ms">
           <i class="fa fa-map-marker"></i> {{getInTouch.address}}<br>{{getInTouch.city}}, {{getInTouch.country}}.

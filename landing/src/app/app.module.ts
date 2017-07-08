@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpModule, Http } from '@angular/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -31,7 +31,11 @@ export function HttpLoaderFactory(http: Http) {
     BrowserAnimationsModule,
     ToasterModule
   ],
-  providers: [FormBuilder],
-  bootstrap: [AppComponent]
+  providers: [
+    FormBuilder
+    ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
