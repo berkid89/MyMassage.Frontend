@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "http-status-codes": "registry:lib/http-status-codes#1.0.0+20160723033700"
+  }
+}
