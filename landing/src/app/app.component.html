@@ -107,7 +107,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a class="tips" href="https://www.facebook.com/Massz%C3%A1zster%C3%A1pia-%C3%A9letm%C3%B3d-369902773167039/"
-                  title="{{ 'Follow Us on Facebook' | translate}}"><i class="fa fa-facebook"></i></a></li>
+                  title="{{ 'Follow Us on Facebook' | translate}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
             </ul>
             <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
           </div>
@@ -248,40 +248,6 @@
   </div>
 </section>
 <!-- END  TESTIMONIAL -->
-
-<!--START SUBSCRIBE -->
-<section id="subscribe" class="page-block-small wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-6 col-sm-12 wow fadeInLeft" data-wow-offset="200" data-wow-delay="500ms">
-        <h4 class="subscribeHeading">{{ "Subscribe to our" | translate }} <span>{{ "newsletter" | translate }}</span> {{ "for special offers" | translate}}</h4>
-      </div>
-      <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-offset="200" data-wow-delay="800ms">
-        <form #subscribeForm="ngForm" (ngSubmit)="onContactSubmit()">
-          <div class="form-row">
-            <div class="col-md-10 col-sm-10 col-xs-10">
-              <input type="email" id="semail" [(ngModel)]="subscription.email" #semail="ngModel" name="semail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                class="form-control" placeholder="{{ 'Enter Your Email Address Here...' | translate }}" required />
-              <div *ngIf="semail.errors && subscription.email && (semail.dirty || semail.touched)" class="alert alert-danger">
-                <div [hidden]="!semail.errors.pattern">
-                  {{ "Invalid email format" | translate }}
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <input type="button" id="sub-submit" name="sub-submit" value="+" class="btn btn-primary" (click)="subscribe()" />
-            </div>
-          </div>
-        </form>
-      </div>
-
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-</section>
-<!-- END  SUBSCRIBE -->
 
 <!--START CONTACT -->
 <section id="contact" class="page-block">

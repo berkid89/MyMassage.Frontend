@@ -1,8 +1,7 @@
 {
     "showLangSelector": false,
     "endpoints": {
-        "api": "http://localhost:51072/api/v1",
-        "subscribe": "/subscription/subscribe",
+        "api": "http://localhost:51073/api/v1",
         "services": "/services/list",
         "offer": "/offer/special",
         "contact": "/contact/send",
