@@ -18,6 +18,7 @@ export class LoginComponent {
     }
 
     public login(){
+      this.errors = new Array<any>();
       this.userService.login(this.userName, this.password).then(res => {
         let result = res.json();
         if(result.errors)

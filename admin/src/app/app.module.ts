@@ -14,6 +14,9 @@ import { Config } from './services/config';
 import { AuthGuard } from './services/authGuard';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { GetInTouch } from './getintouch/getintouch.component';
+import { MassageServices } from './massageServices/massageServices.component';
+import { SpecialOffer } from './specialoffer/specialoffer.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -25,14 +28,20 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] }
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'getintouch', component: GetInTouch, canActivate: [AuthGuard] },
+  { path: 'services', component: MassageServices, canActivate: [AuthGuard] },
+    { path: 'specialoffer', component: SpecialOffer, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    GetInTouch,
+    MassageServices,
+    SpecialOffer
   ],
   imports: [
     BrowserModule,
